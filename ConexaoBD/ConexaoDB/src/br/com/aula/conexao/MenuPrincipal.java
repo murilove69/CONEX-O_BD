@@ -8,11 +8,13 @@ import java.sql.SQLException;
 
 public class MenuPrincipal {
     public static void main(String[] args) {
+        // Estabelecendo conexão com o banco de dados
         Connection conexao = ConexaoDB.conectar();
         if (conexao != null) {
             Scanner scanner = new Scanner(System.in);
             int opcao;
             do {
+                // Exibindo menu principal
                 System.out.println("=== Menu Principal ===");
                 System.out.println("1. Inserir Aluno");
                 System.out.println("2. Atualizar Aluno");
@@ -23,6 +25,7 @@ public class MenuPrincipal {
                 opcao = scanner.nextInt();
                 scanner.nextLine(); // Consumir quebra de linha
 
+                // Executando a ação conforme a escolha do usuário
                 switch (opcao) {
                     case 1:
                         inserirAluno(conexao, scanner);
@@ -56,9 +59,10 @@ public class MenuPrincipal {
             System.out.print("Digite a idade do aluno: ");
             int idade = scanner.nextInt();
 
+            // Definindo os valores dos parâmetros da query
             stmt.setString(1, nome);
             stmt.setInt(2, idade);
-            stmt.executeUpdate();
+            stmt.executeUpdate(); // Executando a inserção no banco de dados
             System.out.println("Dados inseridos com sucesso!");
         } catch (SQLException e) {
             System.err.println("Erro ao inserir dados: " + e.getMessage());
@@ -77,10 +81,11 @@ public class MenuPrincipal {
             int idade = scanner.nextInt();
 
             PreparedStatement stmt = conexao.prepareStatement(sql);
+            // Definindo os valores dos parâmetros da query
             stmt.setString(1, nome);
             stmt.setInt(2, idade);
             stmt.setInt(3, id);
-            int rowsUpdated = stmt.executeUpdate();
+            int rowsUpdated = stmt.executeUpdate(); // Executando a atualização no banco de dados
             if (rowsUpdated > 0) {
                 System.out.println("Registro atualizado com sucesso!");
             } else {
@@ -98,8 +103,9 @@ public class MenuPrincipal {
             int id = scanner.nextInt();
 
             PreparedStatement stmt = conexao.prepareStatement(sql);
+            // Definindo o valor do parâmetro da query
             stmt.setInt(1, id);
-            int rowsDeleted = stmt.executeUpdate();
+            int rowsDeleted = stmt.executeUpdate(); // Executando a exclusão no banco de dados
             if (rowsDeleted > 0) {
                 System.out.println("Registro deletado com sucesso!");
             } else {
@@ -114,8 +120,9 @@ public class MenuPrincipal {
         String sql = "SELECT * FROM alunos";
         try {
             PreparedStatement stmt = conexao.prepareStatement(sql);
-            ResultSet rs = stmt.executeQuery();
+            ResultSet rs = stmt.executeQuery(); // Executando a consulta no banco de dados
 
+            // Iterando sobre o resultado da consulta
             while (rs.next()) {
                 int id = rs.getInt("id");
                 String nome = rs.getString("nome");
