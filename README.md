@@ -28,4 +28,10 @@ Version: 2024-06 (4.32.0)
 
 ## Imagem
 
+![CONEXAO_BD](https://github.com/murilove69/CONEXAO_BD/blob/master/BD_ATUALIZAR.png).
+![CONEXAO_BD](https://github.com/murilove69/CONEXAO_BD/blob/master/BD_DELETAR.png).
+![CONEXAO_BD](https://github.com/murilove69/CONEXAO_BD/blob/master/BD_INSERIR%20ALUNO.png).
+![CONEXAO_BD](https://github.com/murilove69/CONEXAO_BD/blob/master/BD_LISTAR.png).
+
+
 
