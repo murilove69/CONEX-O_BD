@@ -58,7 +58,7 @@ Version: 2024-06 (4.32.0)
 
 ## Autores 
 
-**Murilo Ramos Terra Rodrigues** - *Trabalho Inicial* - Atividade Individual - JBC
+**Murilo Ramos Terra Rodrigues** - *Trabalho Inicial* - Atividade Individual - JBC.
 
 ## Imagem
 
